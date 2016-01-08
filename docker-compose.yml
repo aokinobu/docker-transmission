@@ -7,7 +7,7 @@ transmission:
   environment:
     - ADMIN_PASS=n0bu
   volumes:
-   - /media/3T/bt/downloads:/var/lib/transmission-daemon/downloads
+   - /mnt/owncloud/downloads:/var/lib/transmission-daemon/downloads
    - /media/3T/bt/incomplete:/var/lib/transmission-daemon/incomplete
    - /media/3T/bt/watch:/var/lib/transmission-daemon/watch
   restart: always
