@@ -1,13 +1,16 @@
-transmission:
-  build: .
-  ports:
-   - "12345:12345"
-   - "12345:12345/udp"
-   - "9093:9091"
-  environment:
-    - ADMIN_PASS=n0bu
-  volumes:
-   - /mnt/owncloud/downloads:/var/lib/transmission-daemon/downloads
-   - /media/3T/bt/incomplete:/var/lib/transmission-daemon/incomplete
-   - /media/3T/bt/watch:/var/lib/transmission-daemon/watch
-  restart: always
+version: '2'
+services:
+  transmission:
+    build: .
+    ports:
+     - "12345:12345"
+     - "12345:12345/udp"
+     - "9093:9091"
+    environment:
+      - ADMIN_PASS=n0bu
+    volumes:
+     - /media/3T/bt/downloads:/var/lib/transmission-daemon/downloads
+     - /media/3T/bt/etc:/etc/transmission-daemon/
+     - /media/3T/bt/incomplete:/var/lib/transmission-daemon/incomplete
+     - /media/3T/bt/watch:/var/lib/transmission-daemon/watch
+    restart: always
