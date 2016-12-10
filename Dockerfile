@@ -17,6 +17,8 @@ RUN mkdir -p /var/lib/transmission-daemon/incomplete && \
     chown -R debian-transmission: /var/lib/transmission-daemon && \
     chown -R debian-transmission: /etc/transmission-daemon    
 
+# where settings.json is
+VOLUME ["/var/lib/transmission-daemon/.config/transmission-daemon"]
 VOLUME ["/var/lib/transmission-daemon/downloads"]
 VOLUME ["/var/lib/transmission-daemon/incomplete"]
 VOLUME ["/var/lib/transmission-daemon/watch"]
