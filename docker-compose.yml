@@ -1,5 +1,5 @@
 transmission:
-  build: .
+  build: ${DOCKER_PATH}/docker-transmission/
   ports:
    - "12345:12345"
    - "12345:12345/udp"
